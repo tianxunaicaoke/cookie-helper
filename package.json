@@ -1,0 +1,34 @@
+{
+  "name": "insomnia-plugin-concat-cookies",
+  "version": "1.0.2",
+  "description": "Template tag to insert cookie key-value pairs",
+  "main": "index.js",
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bdurrani/insomnia-plugin-concat-cookies"
+  },
+  "insomnia": {
+    "name": "concat-cookies",
+    "displayName": "Concatenate cookies",
+    "description": "This plugin lets you insert cookie key-value pairs, separated by a delimiter, where ever you need them",
+    "publisher": {
+      "name": "Bilal Durrani"
+    },
+    "applications": {
+      "designer": "*",
+      "core": "*",
+      "cli": "*"
+    }
+  },
+  "keywords": [
+    "cookies"
+  ],
+  "author": "Bilal Durrani",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bdurrani/insomnia-plugin-concat-cookies/issues"
+  }
+}
