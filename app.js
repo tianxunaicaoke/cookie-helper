@@ -5,20 +5,13 @@ const templateTags = [
     description: "help user to get token from cookie jar",
     args: [
       {
-        displayName: "Seperator",
-        description:
-          "The path of the token from the response separated by dots",
-        type: "string",
-        defaultValue: "; ",
-      },
-      {
         displayName: "Cookie keys",
         description: "Comman separated keys of cookies to combine",
         type: "string",
         defaultValue: "reauinf,reautok",
       },
     ],
-    async run(context, seperator, keys) {
+    async run(context, keys) {
       const cookieKeys = keys.split(",").map((x) => x.trim());
       const { meta } = context;
 
@@ -51,7 +44,7 @@ const templateTags = [
         }
       }
       
-      const final = result.join(seperator);
+      const final = result.join("; ");
       console.log(result);
       return final;
     },
