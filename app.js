@@ -1,21 +1,21 @@
 const templateTags = [
   {
     name: "apitoken",
-    displayName: "Concat-Cookies",
-    description: "Concats the specific cookie key/value",
+    displayName: "Cookie-helper",
+    description: "help user to get token from cookie jar",
     args: [
       {
         displayName: "Seperator",
         description:
           "The path of the token from the response separated by dots",
         type: "string",
-        defaultValue: ";",
+        defaultValue: "; ",
       },
       {
         displayName: "Cookie keys",
         description: "Comman separated keys of cookies to combine",
         type: "string",
-        defaultValue: "",
+        defaultValue: "reauinf,reautok",
       },
     ],
     async run(context, seperator, keys) {
@@ -38,17 +38,21 @@ const templateTags = [
         workspace
       );
 
-      // console.log(JSON.stringify(cookieKeys));
+      console.log("hello xun1");
       const result = [];
-      for (const cookie of cookieJar.cookies) {
-        const key = cookie.key.trim();
-        console.log(`current key: ${key}`);
-        if (cookieKeys.includes(key)) {
-          result.push(`${cookie.key}=${cookie.value}`);
+      
+      for(cookieKey of cookieKeys){
+        for (const cookie of cookieJar.cookies) {
+          const key = cookie.key.trim();
+          console.log(`current key: ${key}`);
+          if (cookieKey == key) {
+            result.push(`${cookie.key}=${cookie.value}`);
+          }
         }
       }
+      
       const final = result.join(seperator);
-      console.log(final);
+      console.log(result);
       return final;
     },
   },

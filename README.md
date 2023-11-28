@@ -1,7 +1,5 @@
 ## Introduction
 
-This plugin lets you include cookies key-value pairs concatenated in a string as a template variable.
-I ran into a use case that needed this so I decided to publish it as a plugin
+This plugin allows you to utilize cookie key-value pairs, concatenated as a string, within a template variable. I encountered a specific use case that required this functionality, prompting me to publish it as a plugin.
 
-All you need is to specify the keys that need to be included separated by a comma (,) and a seperator character to
-use. 
+To use the plugin, simply specify the keys that need inclusion, separated by commas (,), and choose a separator character to be used.
