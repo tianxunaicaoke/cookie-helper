@@ -1,6 +1,6 @@
 const templateTags = [
   {
-    name: "theApitoken",
+    name: "apitokens",
     displayName: "Cookie-helper",
     description: "help user to get token from cookie jar",
     args: [
@@ -8,7 +8,7 @@ const templateTags = [
         displayName: "Cookie keys",
         description: "Comman separated keys of cookies to combine",
         type: "string",
-        defaultValue: "",
+        defaultValue: "reauinf,reautok",
       },
     ],
     async run(context, keys) {
@@ -27,13 +27,13 @@ const templateTags = [
         throw new Error(`Workspace not found for ${meta.workspaceId}`);
       }
 
-      const cookieJar = await context.util.models.cookieJar.getOrCreateForWorkspace(
-        workspace
+      const cookieJar = await context.util.models.cookieJar.getOrCreateForParentId(
+        meta.workspaceId
       );
 
       console.log("hello xun1");
       const result = [];
-      
+
       for(cookieKey of cookieKeys){
         for (const cookie of cookieJar.cookies) {
           const key = cookie.key.trim();
@@ -43,7 +43,7 @@ const templateTags = [
           }
         }
       }
-      
+
       const final = result.join("; ");
       console.log(result);
       return final;
