@@ -1,6 +1,6 @@
 const templateTags = [
   {
-    name: "apitoken",
+    name: "theApitoken",
     displayName: "Cookie-helper",
     description: "help user to get token from cookie jar",
     args: [
@@ -8,7 +8,7 @@ const templateTags = [
         displayName: "Cookie keys",
         description: "Comman separated keys of cookies to combine",
         type: "string",
-        defaultValue: "reauinf,reautok",
+        defaultValue: "",
       },
     ],
     async run(context, keys) {

@@ -1,6 +1,6 @@
 {
   "name": "insomnia-plugin-cookie-helper",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Template tag to insert cookie key-value pairs",
   "main": "app.js",
   "scripts": {
