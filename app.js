@@ -8,7 +8,7 @@ const templateTags = [
         displayName: "Cookie keys",
         description: "Comman separated keys of cookies to combine",
         type: "string",
-        defaultValue: "reauinf,reautok",
+        defaultValue: "",
       },
     ],
     async run(context, keys) {
